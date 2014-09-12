@@ -1,0 +1,719 @@
+---
+:apis:
+  :web_payment_api:
+    :methods:
+    - :name: :do_web_payment
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :returnURL
+        :required: true
+      - :name: :cancelURL
+        :required: true
+      - :name: :order
+        :required: true
+      - :name: :notificationURL
+        :required: false
+      - :name: :selectedContractList
+        :required: false
+      - :name: :secondSelectedContractList
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :languageCode
+        :required: false
+      - :name: :customPaymentPageCode
+        :required: false
+      - :name: :buyer
+        :required: false
+      - :name: :owner
+        :required: false
+      - :name: :securityMode
+        :required: false
+      - :name: :recurring
+        :required: false
+      - :name: :customPaymentTemplateURL
+        :required: false
+      - :name: :contractNumberWalletList
+        :required: false
+    - :name: :get_web_payment_details
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :token
+        :required: true
+    - :name: :manage_web_wallet
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :contractNumber
+        :required: true
+      - :name: :selectedContractList
+        :required: false
+      - :name: :updatePersonalDetails
+        :required: false
+      - :name: :buyer
+        :required: true
+      - :name: :owner
+        :required: false
+      - :name: :languageCode
+        :required: false
+      - :name: :customPaymentPageCode
+        :required: false
+      - :name: :securityMode
+        :required: false
+      - :name: :returnURL
+        :required: true
+      - :name: :cancelURL
+        :required: true
+      - :name: :notificationURL
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :customPaymentTemplateURL
+        :required: false
+      - :name: :contractNumberWalletList
+        :required: false
+    - :name: :create_web_wallet
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :contractNumber
+        :required: true
+      - :name: :selectedContractList
+        :required: false
+      - :name: :updatePersonalDetails
+        :required: false
+      - :name: :buyer
+        :required: true
+      - :name: :owner
+        :required: false
+      - :name: :languageCode
+        :required: false
+      - :name: :customPaymentPageCode
+        :required: false
+      - :name: :securityMode
+        :required: false
+      - :name: :returnURL
+        :required: true
+      - :name: :cancelURL
+        :required: true
+      - :name: :notificationURL
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :customPaymentTemplateURL
+        :required: false
+      - :name: :contractNumberWalletList
+        :required: false
+    - :name: :update_web_wallet
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :contractNumber
+        :required: true
+      - :name: :cardInd
+        :required: false
+      - :name: :walletId
+        :required: true
+      - :name: :updatePersonalDetails
+        :required: false
+      - :name: :updateOwnerDetails
+        :required: false
+      - :name: :updatePaymentDetails
+        :required: false
+      - :name: :buyer
+        :required: false
+      - :name: :languageCode
+        :required: false
+      - :name: :customPaymentPageCode
+        :required: false
+      - :name: :securityMode
+        :required: false
+      - :name: :returnURL
+        :required: true
+      - :name: :cancelURL
+        :required: true
+      - :name: :notificationURL
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :customPaymentTemplateURL
+        :required: false
+      - :name: :contractNumberWalletList
+        :required: false
+    - :name: :get_web_wallet
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :token
+        :required: true
+  :direct_payment_api:
+    :methods:
+    - :name: :do_authorization
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :bankAccountData
+        :required: true
+      - :name: :card
+        :required: true
+      - :name: :order
+        :required: true
+      - :name: :buyer
+        :required: false
+      - :name: :owner
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :authentication3DSecure
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :do_capture
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :transactionID
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :privateDataList
+        :required: false
+      - :name: :sequenceNumber
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :do_re_authorization
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :transactionID
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :order
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :do_debit
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :card
+        :required: true
+      - :name: :order
+        :required: true
+      - :name: :buyer
+        :required: false
+      - :name: :owner
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :authentication3DSecure
+        :required: false
+      - :name: :authorization
+        :required: true
+      - :name: :media
+        :required: false
+    - :name: :do_refund
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :transactionID
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :comment
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :sequenceNumber
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :do_reset
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :transactionID
+        :required: true
+      - :name: :comment
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :do_credit
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :card
+        :required: true
+      - :name: :comment
+        :required: false
+      - :name: :order
+        :required: false
+      - :name: :buyer
+        :required: false
+      - :name: :owner
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :create_wallet
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :contractNumber
+        :required: true
+      - :name: :wallet
+        :required: true
+      - :name: :buyer
+        :required: false
+      - :name: :owner
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :authentication3DSecure
+        :required: false
+      - :name: :media
+        :required: false
+      - :name: :contractNumberWalletList
+        :required: false
+    - :name: :update_wallet
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :contractNumber
+        :required: true
+      - :name: :cardInd
+        :required: false
+      - :name: :wallet
+        :required: true
+      - :name: :buyer
+        :required: false
+      - :name: :owner
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :authentication3DSecure
+        :required: false
+      - :name: :media
+        :required: false
+      - :name: :contractNumberWalletList
+        :required: false
+    - :name: :get_wallet
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :contractNumber
+        :required: true
+      - :name: :walletId
+        :required: true
+      - :name: :cardInd
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :get_cards
+      :attributes:
+      - :name: :contractNumber
+        :required: true
+      - :name: :walletId
+        :required: true
+      - :name: :cardInd
+        :required: false
+    - :name: :disable_wallet
+      :attributes:
+      - :name: :contractNumber
+        :required: true
+      - :name: :cardInd
+        :required: false
+      - :name: :walletIdList
+        :required: true
+    - :name: :enable_wallet
+      :attributes:
+      - :name: :contractNumber
+        :required: true
+      - :name: :cardInd
+        :required: false
+      - :name: :walletId
+        :required: true
+    - :name: :do_immediate_wallet_payment
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :order
+        :required: true
+      - :name: :buyer
+        :required: false
+      - :name: :walletId
+        :required: true
+      - :name: :cardInd
+        :required: false
+      - :name: :cvx
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :do_scheduled_wallet_payment
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :orderRef
+        :required: false
+      - :name: :orderDate
+        :required: false
+      - :name: :scheduledDate
+        :required: true
+      - :name: :walletId
+        :required: true
+      - :name: :cardInd
+        :required: false
+      - :name: :order
+        :required: false
+      - :name: :privateDataList
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :do_recurrent_wallet_payment
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :orderRef
+        :required: true
+      - :name: :orderDate
+        :required: true
+      - :name: :scheduledDate
+        :required: true
+      - :name: :walletId
+        :required: true
+      - :name: :cardInd
+        :required: false
+      - :name: :recurring
+        :required: true
+      - :name: :privateDataList
+        :required: false
+      - :name: :order
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :get_payment_record
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :contractNumber
+        :required: true
+      - :name: :paymentRecordId
+        :required: true
+    - :name: :disable_payment_record
+      :attributes:
+      - :name: :contractNumber
+        :required: true
+      - :name: :paymentRecordId
+        :required: true
+    - :name: :verify_enrollment
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :card
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :orderRef
+        :required: true
+      - :name: :mdFieldValue
+        :required: false
+      - :name: :userAgent
+        :required: false
+    - :name: :verify_authentication
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :contractNumber
+        :required: true
+      - :name: :pares
+        :required: true
+      - :name: :md
+        :required: false
+      - :name: :card
+        :required: true
+    - :name: :create_merchant
+      :attributes:
+      - :name: :corporateName
+        :required: false
+      - :name: :publicName
+        :required: false
+      - :name: :currency
+        :required: false
+      - :name: :nationalID
+        :required: false
+      - :name: :SIRET
+        :required: false
+      - :name: :other
+        :required: false
+      - :name: :distributor
+        :required: false
+      - :name: :merchantAddress
+        :required: false
+      - :name: :businessInterlocutor
+        :required: false
+      - :name: :technicalInterlocutor
+        :required: false
+      - :name: :subscription
+        :required: false
+      - :name: :poss
+        :required: false
+      - :name: :pos
+        :required: false
+      - :name: :partner
+        :required: false
+    - :name: :do_scoring_cheque
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :payment
+        :required: true
+      - :name: :cheque
+        :required: true
+      - :name: :order
+        :required: true
+      - :name: :privateDataList
+        :required: false
+      - :name: :media
+        :required: false
+    - :name: :get_encryption_key
+      :attributes: []
+    - :name: :get_merchant_settings
+      :attributes:
+      - :name: :version
+        :required: false
+    - :name: :get_balance
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :cardID
+        :required: true
+      - :name: :contractNumber
+        :required: true
+    - :name: :get_token
+      :attributes:
+      - :name: :cardNumber
+        :required: true
+      - :name: :expirationDate
+        :required: false
+      - :name: :contractNumber
+        :required: true
+    - :name: :un_block
+      :attributes:
+      - :name: :transactionID
+        :required: true
+      - :name: :transactionDate
+        :required: false
+      - :name: :version
+        :required: false
+  :extended_api:
+    :methods:
+    - :name: :get_transaction_details
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :transactionId
+        :required: false
+      - :name: :orderRef
+        :required: false
+      - :name: :startDate
+        :required: false
+      - :name: :endDate
+        :required: false
+      - :name: :transactionHistory
+        :required: false
+      - :name: :archiveSearch
+        :required: false
+    - :name: :transactions_search
+      :attributes:
+      - :name: :version
+        :required: true
+      - :name: :transactionId
+        :required: false
+      - :name: :orderRef
+        :required: false
+      - :name: :startDate
+        :required: false
+      - :name: :endDate
+        :required: false
+      - :name: :contractNumber
+        :required: false
+      - :name: :authorizationNumber
+        :required: false
+      - :name: :returnCode
+        :required: false
+      - :name: :paymentMean
+        :required: false
+      - :name: :transactionType
+        :required: false
+      - :name: :name
+        :required: false
+      - :name: :firstName
+        :required: false
+      - :name: :email
+        :required: false
+      - :name: :cardNumber
+        :required: false
+      - :name: :currency
+        :required: false
+      - :name: :minAmount
+        :required: false
+      - :name: :maxAmount
+        :required: false
+      - :name: :walletId
+        :required: false
+      - :name: :sequenceNumber
+        :required: false
+      - :name: :token
+        :required: false
+    - :name: :get_alert_details
+      :attributes:
+      - :name: :AlertId
+        :required: true
+      - :name: :TransactionId
+        :required: true
+:objects:
+  :address:
+    :attributes:
+    - :name: :title
+    - :name: :name
+    - :name: :firstName
+    - :name: :lastName
+    - :name: :street1
+    - :name: :street2
+    - :name: :cityName
+    - :name: :zipCode
+    - :name: :country
+    - :name: :phone
+    - :name: :state
+  :order:
+    :attributes:
+    - :name: :ref
+    - :name: :origin
+    - :name: :country
+    - :name: :taxes
+    - :name: :amount
+    - :name: :currency
+    - :name: :date
+    - :name: :details
+    - :name: :deliveryTime
+    - :name: :deliveryMode
+    - :name: :deliveryExpectedDate
+    - :name: :deliveryExpectedDelay
+  :payment:
+    :attributes:
+    - :name: :amount
+    - :name: :currency
+    - :name: :action
+    - :name: :mode
+    - :name: :contractNumber
+    - :name: :differedActionDate
+  :authorization:
+    :attributes:
+    - :name: :number
+    - :name: :date
+  :card:
+    :attributes:
+    - :name: :encryptionKeyId
+    - :name: :encryptedData
+    - :name: :number
+    - :name: :type
+    - :name: :expirationDate
+    - :name: :cvx
+    - :name: :ownerBirthdayDate
+    - :name: :password
+    - :name: :cardPresent
+    - :name: :cardholder
+    - :name: :token
+  :buyer:
+    :attributes:
+    - :name: :title
+    - :name: :lastName
+    - :name: :firstName
+    - :name: :email
+    - :name: :shippingAdress
+    - :name: :billingAddress
+    - :name: :accountCreateDate
+    - :name: :accountAverageAmount
+    - :name: :accountOrderCount
+    - :name: :walletId
+    - :name: :walletDisplayed
+    - :name: :walletSecured
+    - :name: :walletCardInd
+    - :name: :ip
+    - :name: :mobilePhone
+    - :name: :customerId
+  :owner:
+    :attributes:
+    - :name: :lastName
+    - :name: :firstName
+    - :name: :billingAddress
+    - :name: :issueCardDate
+  :recurring:
+    :attributes:
+    - :name: :firstAmount
+    - :name: :amount
+    - :name: :billingCycle
+    - :name: :billingLeft
+    - :name: :billingDay
+    - :name: :startDate
+  :wallet:
+    :attributes:
+    - :name: :walletId
+    - :name: :lastName
+    - :name: :firstName
+    - :name: :email
+    - :name: :shippingAddress
+    - :name: :card
+    - :name: :comment
+    - :name: :default
+  :authentication3_d_secure:
+    :attributes:
+    - :name: :md
+    - :name: :pares
+    - :name: :xid
+    - :name: :eci
+    - :name: :cavv
+    - :name: :cavvAlgorithm
+    - :name: :vadsResult
+    - :name: :typeSecurisation
+  :subscription:
+    :attributes:
+    - :name: :id
+    - :name: :option
+  :bank_account_data:
+    :attributes:
+    - :name: :countryCode
+    - :name: :bankCode
+    - :name: :accountNumber
+    - :name: :key
+  :custom_payment_page_code:
+    :attributes:
+    - :name: :code
+    - :name: :label
+    - :name: :type
+  :cheque:
+    :attributes:
+    - :name: :number
