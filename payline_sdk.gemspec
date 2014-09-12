@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["loyer.sebastien@gmail.com"]
   spec.summary       = %q{SDK for Payline API}
   spec.description   = %q{}
-  spec.homepage      = "https://github.com/Sbastien/payline_sdk"
+  spec.homepage      = "https://github.com/Sbastien/PaylineSDK"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
